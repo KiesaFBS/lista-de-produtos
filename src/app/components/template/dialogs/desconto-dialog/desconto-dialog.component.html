@@ -1,0 +1,11 @@
+<div mat-dialog-content>
+    <p>O produto está com 100% de desconto. Deseja confirmar a operação?</p>
+</div>
+<div mat-dialog-actions class="centralize-buttons">
+    <button mat-button color="primary" mat-dialog-close (click)="closeDialog()">
+        Cancelar
+    </button>
+    <button mat-button color="warn" (click)="confirmarEnvio(product)">
+        Confirmar
+    </button>
+</div>

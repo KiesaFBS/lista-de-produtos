@@ -1,0 +1,31 @@
+<mat-card>
+    <mat-card-title>Novo Produto</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome" [(ngModel)]="product.name" name="name">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Preço (R$)" [(ngModel)]="product.price" name="price">
+        </mat-form-field>
+        <mat-form-field>
+            <textarea maxlength="500" matInput placeholder="Descrição com no máximo 500 caracteres"
+                [(ngModel)]="product.descricao" name="descricao"></textarea>
+        </mat-form-field>
+        <mat-form-field>
+            <input type="number" min="0" max="100" matInput placeholder="Desconto em porcentagem (entre 0 e 100)"
+                [(ngModel)]="product.desconto" name="desconto">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Preço com desconto (R$)"
+                [value]="product.price-product.price*(product.desconto/100)" name="priceComDesconto" disabled>
+        </mat-form-field>
+    </form>
+
+    <button mat-raised-button (click)="createProduct(product)" color="primary">
+        Salvar
+    </button>
+
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+</mat-card>
